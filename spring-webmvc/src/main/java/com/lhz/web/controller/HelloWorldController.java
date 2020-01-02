@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class HelloWorldController {
 
     @RequestMapping("")
-    public String index(/*@RequestParam int value,*/ @CookieValue("JSESSIONID")String jsessionid, Model model) {
+    public String index(/*@RequestParam int value,*/ @CookieValue(value = "JSESSIONID", required = false)String jsessionid, Model model) {
 
         model.addAttribute("jsessionid", jsessionid);
         return "index";
